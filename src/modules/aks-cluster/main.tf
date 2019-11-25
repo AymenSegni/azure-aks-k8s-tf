@@ -3,7 +3,7 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   name                = var.cluster_name
   location            = var.location
   resource_group_name = var.resource_group_name
-  dns_prefix          = "${var.environment}-${var.name_suffix}"
+  dns_prefix          = var.dns_suffix
   kubernetes_version  = var.kubernetes_version
 
   agent_pool_profile {
