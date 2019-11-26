@@ -69,16 +69,6 @@ variable "service_cidr" {
   default     = "10.0.0.0/16"
 }
 
-# Cluster identity SP config
-variable "client_id" {
-  description = "azure service principal used as the aks nodes identity for managing cloud resources"
-  default     = "00000000-0000-0000-0000-000000000000"
-}
-
-variable "client_secret" {
-  description = "azure service principal key for node identity"
-  default     = "00000000000000000000000000000000"
-}
 
 variable "diagnostics_workspace_id" {
   description = "log analytics workspace id for cluster audit"
