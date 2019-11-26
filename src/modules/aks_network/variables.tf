@@ -15,5 +15,4 @@ variable "vnet_name" {
 
 variable "subnet_cidr" {
   description = "the subnet cidr range"
-  default     = "10.0.1.0/24"
 }
