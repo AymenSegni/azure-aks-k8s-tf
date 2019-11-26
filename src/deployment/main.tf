@@ -36,7 +36,7 @@ module "log_analytics" {
 # AKS Cluster
   
 module "aks_cluster" {
- source                   = "../modules/aks_cluster"
+ source                   = "../modules/aks-cluster"
  cluster_name             = var.cluster_name
  resource_group_name      = azurerm_resource_group.aks.name
  kubernetes_version       = var.kubernetes_version
