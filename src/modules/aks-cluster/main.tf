@@ -30,16 +30,6 @@ resource "azurerm_kubernetes_cluster" "cluster" {
     client_secret = var.client_secret
   }
 
-  role_based_access_control {
-    enabled = true
-
-    azure_active_directory {
-      client_app_id     = var.aad_client_app_id
-      server_app_id     = var.aad_server_app_id
-      server_app_secret = var.aad_server_app_secret
-      tenant_id         = var.aad_tenant_id
-    }
-  }
 
   tags = merge(
     local.common_tags,
