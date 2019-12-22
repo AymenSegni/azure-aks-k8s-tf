@@ -18,3 +18,6 @@ resource "azurerm_log_analytics_solution" "test" {
         product   = "OMSGallery/ContainerInsights"
     }
 }
+resource "random_id" "log_analytics_workspace_name_suffix" {
+    byte_length = 8
+}
