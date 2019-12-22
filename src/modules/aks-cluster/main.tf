@@ -1,9 +1,8 @@
-
 resource "azurerm_kubernetes_cluster" "cluster" {
   name                = var.cluster_name
   location            = var.location
   resource_group_name = var.resource_group_name
-  dns_prefix          = var.dns_suffix
+  dns_prefix          = var.dns_prefix
   kubernetes_version  = var.kubernetes_version
 
   agent_pool_profile {
@@ -31,12 +30,9 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   }
 
 
-  tags = merge(
-    local.common_tags,
-    {
-      "aadSSH" = "True"
-    },
-  )
+ tags = {
+        Environment = "Development"
+    }
 
   lifecycle {
     prevent_destroy = true
@@ -102,4 +98,6 @@ resource "azurerm_monitor_diagnostic_setting" "aks_cluster" {
     }
   }
 }
+
+
 
