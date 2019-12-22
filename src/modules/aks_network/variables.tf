@@ -16,3 +16,11 @@ variable "vnet_name" {
 variable "subnet_cidr" {
   description = "the subnet cidr range"
 }
+
+variable "location" {
+  description = "the cluster location"
+}
+
+variable "address_space" {
+  description = "Network address space"
+}
