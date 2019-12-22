@@ -1,5 +1,5 @@
-variable "dns_suffix" {
-  description = "DNS Suffix"
+variable "dns_prefix" {
+  description = "DNS prefix"
 }
 
 variable "location" {
@@ -73,11 +73,13 @@ variable "service_cidr" {
 variable "diagnostics_workspace_id" {
   description = "log analytics workspace id for cluster audit"
 }
-
-# for tagging
-locals {
-  common_tags = {
-    Environment = var.resource_group_name
-  }
+variable "client_id" {
+  
 }
+variable "client_secret" {
+  
+}
+
+
+
 
