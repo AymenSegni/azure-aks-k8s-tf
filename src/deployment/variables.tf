@@ -1,65 +1,64 @@
-
 variable "client_id" {}
 
 variable "client_secret" {}
 
 variable "node_count" {
-    description = "number of nodes to deploy"
-    default     = 3
+  description = "number of nodes to deploy"
+  default     = 3
 }
 
 variable "dns_prefix" {
-    description = "DNS Suffix"
-    default     = "aks-runitoncloud"
+  description = "DNS Suffix"
+  default     = "aks-runitoncloud"
 }
 
 variable cluster_name {
-    description = "AKS cluster name"
-    default     = "run-it-on-cloud"
+  description = "AKS cluster name"
+  default     = "run-it-on-cloud"
 }
 
 variable resource_group_name {
-    description = "name of the resource group to deploy AKS cluster in"
-    default     = "run it on cloud"    
+  description = "name of the resource group to deploy AKS cluster in"
+  default     = "run it on cloud"
 }
 
 variable location {
-    description = "azure location to deploy resources"
-    default     = "Europe West"
+  description = "azure location to deploy resources"
+  default     = "Europe West"
 }
 
 variable log_analytics_workspace_name {
-    default = "testLogAnalyticsWorkspaceName"
+  default = "testLogAnalyticsWorkspaceName"
 }
 
 # refer https://azure.microsoft.com/global-infrastructure/services/?products=monitor for log analytics available regions
 variable log_analytics_workspace_location {
-    default = "eastus"
+  default = "eastus"
 }
 
 # refer https://azure.microsoft.com/pricing/details/monitor/ for log analytics pricing 
 variable log_analytics_workspace_sku {
-    default = "PerGB2018"
+  default = "PerGB2018"
 }
 
 variable subnet_name {
-    description = "subnet id where the nodes will be deployed"
-    default = "aks-subnet"
+  description = "subnet id where the nodes will be deployed"
+  default     = "aks-subnet"
 }
 
 variable vnet_name {
-    description = "vnet id where the nodes will be deployed"
-    default = "aks-vnet"
+  description = "vnet id where the nodes will be deployed"
+  default     = "aks-vnet"
 }
 
 variable subnet_cidr {
-    description = "the subnet cidr range"
-    default     = "10.0.1.0/24"   
+  description = "the subnet cidr range"
+  default     = "10.0.1.0/24"
 }
 
 variable kubernetes_version {
-    description = "version of the kubernetes cluster"
-    default     = "1.14.6" 
+  description = "version of the kubernetes cluster"
+  default     = "1.14.6"
 }
 
 variable "vm_size" {
@@ -81,6 +80,17 @@ variable "max_pods" {
   description = "maximum number of pods that can run on a single node"
   default     = "100"
 }
+
+variable "address_space" {
+  description = "The address space that is used the virtual network"
+  default     = "10.0.0.0/16"
+}
+
+
+
+
+
+
 
 
 
