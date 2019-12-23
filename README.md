@@ -20,7 +20,7 @@ And if you're working as part of a team, source control gives you peace of mind.
 
 This guide walks you through how to the following tasks:
 
-* Use HCL (HashiCorp Language) to define a Kubernetes cluster
+* Learn HCL (HashiCorp Language) and Terraform best practices by doing 
 * Use Terraform and AKS to create a Kubernetes cluster
 * Use the kubectl tool to test the availability of a Kubernetes cluster
 
@@ -36,3 +36,6 @@ This guide walks you through how to the following tasks:
 
 * Configure Terraform: Follow the directions in the article, Terraform and configure access to Azure
 
+-----
+
+You can find the full guide in my [blog](http://aymen-segni.com/index.php/2019/12/24/create-a-kubernetes-cluster-with-azure-aks-using-terraform/) 
