@@ -38,4 +38,4 @@ This guide walks you through how to the following tasks:
 
 -----
 
-You can find the full guide in my [blog](http://aymen-segni.com/index.php/2019/12/24/create-a-kubernetes-cluster-with-azure-aks-using-terraform/) 
+You can find the full guide in the [Run IT on Cloud article](http://aymen-segni.com/index.php/2019/12/24/create-a-kubernetes-cluster-with-azure-aks-using-terraform/) 
