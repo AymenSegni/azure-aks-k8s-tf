@@ -19,7 +19,7 @@ variable cluster_name {
 
 variable resource_group_name {
   description = "name of the resource group to deploy AKS cluster in"
-  default     = "run it on cloud"
+  default     = "run-it-on-cloud"
 }
 
 variable location {
