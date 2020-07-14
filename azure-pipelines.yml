@@ -10,10 +10,6 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- task: terraformInstaller@0
-  inputs:
-    terraformVersion: '0.12.12'
-  displayName: Install Terraform
 
 - task: terraform@0
   inputs:
