@@ -10,10 +10,32 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+- task: terraformInstaller@0
+  inputs:
+    terraformVersion: '0.12.12'
+  displayName: Install Terraform
 
-- script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+- task: terraform@0
+  inputs:
+    command: 'cd src/deployment/'
+  displayName: Terraform Deployment src
+- task: terraform@0
+  inputs:
+    command: 'init'
+    providerAzureConnectedServiceName: 'azure-aks-tf'
+    backendAzureProviderStorageAccountName: 'runitoncloudtf'
+  displayName: Terraform Init
+    
+- task: terraform@0
+  inputs:
+    command: 'plan'  
+    providerAzureConnectedServiceName: 'azure-aks-tf'
+    args: -out=tfplan.out
+  displayName: Terraform Plan
+
+- task: terraform@0
+  inputs:
+    command: 'apply'
+    providerAzureConnectedServiceName: 'azure-aks-tf'
+    args: tfplan.out
+  displayName: Terraform Apply
