@@ -9,17 +9,17 @@ variable "node_count" {
 
 variable "dns_prefix" {
   description = "DNS Suffix"
-  default     = "aks-runitoncloud"
+  default     = "runitoncloud"
 }
 
 variable cluster_name {
   description = "AKS cluster name"
-  default     = "run-it-on-cloud"
+  default     = "runItOnCloud"
 }
 
 variable resource_group_name {
   description = "name of the resource group to deploy AKS cluster in"
-  default     = "run-it-on-cloud"
+  default     = "runitoncloud"
 }
 
 variable location {
@@ -36,7 +36,7 @@ variable log_analytics_workspace_location {
   default = "eastus"
 }
 
-# refer https://azure.microsoft.com/pricing/details/monitor/ for log analytics pricing 
+# refer https://azure.microsoft.com/pricing/details/monitor/ for log analytics pricing
 variable log_analytics_workspace_sku {
   default = "PerGB2018"
 }
@@ -58,7 +58,7 @@ variable subnet_cidr {
 
 variable kubernetes_version {
   description = "version of the kubernetes cluster"
-  default     = "1.14.6"
+  default     = "1.16.10"
 }
 
 variable "vm_size" {
