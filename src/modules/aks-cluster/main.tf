@@ -5,16 +5,29 @@ resource "azurerm_kubernetes_cluster" "cluster" {
   dns_prefix          = var.dns_prefix
   kubernetes_version  = var.kubernetes_version
 
-  agent_pool_profile {
-    name            = var.agent_pool_name
-    count           = var.node_count
+  default_node_pool {
+    name            = var.default_pool_name
+    node_count      = var.node_count
     vm_size         = var.vm_size
-    os_type         = var.os_type
     os_disk_size_gb = var.os_disk_size_gb
     vnet_subnet_id  = var.vnet_subnet_id
     max_pods        = var.max_pods
-    type            = var.agent_pool_type
+    type            = var.default_pool_type
+
+    enable_auto_scaling = true
+    min_count           = var.min_count
+    max_count           = var.max_count
+
+    tags = merge(
+    {
+       "environment" = "runitoncloud"
+    },
+    {
+      "aadssh" = "True"
+    },
+  )
   }
+
 
   network_profile {
     network_plugin     = var.network_plugin

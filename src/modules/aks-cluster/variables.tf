@@ -42,9 +42,6 @@ variable "vm_size" {
   description = "size/type of VM to use for nodes"
 }
 
-variable "os_type" {
-  description = "type of OS to run on nodes"
-}
 
 variable "os_disk_size_gb" {
   description = "size of the OS disk to attach to the nodes"
@@ -69,16 +66,34 @@ variable "service_cidr" {
   default     = "10.0.0.0/16"
 }
 
-
 variable "diagnostics_workspace_id" {
   description = "log analytics workspace id for cluster audit"
 }
 variable "client_id" {
-  
+
 }
 variable "client_secret" {
-  
+
 }
+variable "min_count" {
+  default     = 1
+  description = "Minimum Node Count"
+}
+variable "max_count" {
+  default     = 5
+  description = "Maximum Node Count"
+}
+variable "default_pool_name" {
+  description = "name for the agent pool profile"
+  default     = "default"
+}
+variable "default_pool_type" {
+  description = "type of the agent pool (AvailabilitySet and VirtualMachineScaleSets)"
+  default     = "VirtualMachineScaleSets"
+}
+
+
+
 
 
 

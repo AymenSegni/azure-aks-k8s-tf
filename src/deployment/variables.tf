@@ -4,7 +4,7 @@ variable "client_secret" {}
 
 variable "node_count" {
   description = "number of nodes to deploy"
-  default     = 3
+  default     = 2
 }
 
 variable "dns_prefix" {
@@ -24,7 +24,7 @@ variable resource_group_name {
 
 variable location {
   description = "azure location to deploy resources"
-  default     = "Europe West"
+  default     = "westeurope"
 }
 
 variable log_analytics_workspace_name {
@@ -43,17 +43,17 @@ variable log_analytics_workspace_sku {
 
 variable subnet_name {
   description = "subnet id where the nodes will be deployed"
-  default     = "aks-subnet"
+  default     = "runitoncloud-subnet"
 }
 
 variable vnet_name {
   description = "vnet id where the nodes will be deployed"
-  default     = "aks-vnet"
+  default     = "runitoncloud-vnet"
 }
 
 variable subnet_cidr {
   description = "the subnet cidr range"
-  default     = "10.0.1.0/24"
+  default     = "10.2.32.0/21"
 }
 
 variable kubernetes_version {
@@ -63,12 +63,7 @@ variable kubernetes_version {
 
 variable "vm_size" {
   description = "size/type of VM to use for nodes"
-  default     = "Standard_D15_v2"
-}
-
-variable "os_type" {
-  description = "type of OS to run on nodes"
-  default     = "Linux"
+  default     = "Standard_D2_v2"
 }
 
 variable "os_disk_size_gb" {
@@ -83,7 +78,15 @@ variable "max_pods" {
 
 variable "address_space" {
   description = "The address space that is used the virtual network"
-  default     = "10.0.0.0/16"
+  default     = "10.2.0.0/16"
+}
+variable "min_count" {
+  default     = 1
+  description = "Minimum Node Count"
+}
+variable "max_count" {
+  default     = 2
+  description = "Maximum Node Count"
 }
 
 

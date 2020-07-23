@@ -41,11 +41,12 @@ module "aks_cluster" {
   source                   = "../modules/aks-cluster"
   cluster_name             = var.cluster_name
   location                 = var.location
-  os_type                  = var.os_type
   dns_prefix               = var.dns_prefix
   resource_group_name      = azurerm_resource_group.aks.name
   kubernetes_version       = var.kubernetes_version
   node_count               = var.node_count
+  min_count                = var.min_count
+  max_count                = var.max_count
   os_disk_size_gb          = "1028"
   max_pods                 = "110"
   vm_size                  = var.vm_size
